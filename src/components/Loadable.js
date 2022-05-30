@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import LoadingScreen from 'src/components/LoadingScreen'
+import LoadingScreen from './LoadingScreen'
 
 const Loadable = Component => props =>
 	(

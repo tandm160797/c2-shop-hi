@@ -1,17 +1,25 @@
+import MainLayout from '$components/MainLayout'
+import { lazy } from 'react'
+import Loadable from './components/Loadable'
+
+const LoginPage = Loadable(lazy(() => import('./pages/Auth/Login')))
+
 const adminRoutes = []
 
 const publicRoutes = [
 	{
 		path: '',
-		element: '1'
-	},
-	{
-		path: 'login',
-		element: '1'
-	},
-	{
-		path: 'register',
-		element: '1'
+		element: <MainLayout />,
+		children: [
+			{
+				path: 'login',
+				element: <LoginPage />
+			},
+			{
+				path: 'register',
+				element: '1'
+			}
+		]
 	}
 ]
 

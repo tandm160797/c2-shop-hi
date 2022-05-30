@@ -9,7 +9,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import { Provider as StoreProvider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
-import App from 'src/App'
+import App from './App'
 
 const anchorOrigin = {
 	vertical: 'top',

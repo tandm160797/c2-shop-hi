@@ -1,3 +1,4 @@
+import SettingsDrawer from '$components/SettingsDrawer'
 import useScrollReset from '$hooks/useScrollReset'
 import useSettings from '$hooks/useSettings'
 import { createCustomTheme } from '$theme'
@@ -5,8 +6,7 @@ import { ThemeProvider } from '@mui/material'
 import CssBaseline from '@mui/material/CssBaseline'
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
-import SettingsDrawer from 'src/components/SettingsDrawer'
-import routes from 'src/routes'
+import routes from './routes'
 
 const App = () => {
 	useScrollReset()

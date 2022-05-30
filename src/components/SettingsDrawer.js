@@ -68,7 +68,7 @@ const SettingsDrawer = () => {
 				PaperProps={{
 					sx: {
 						p: 2,
-						width: 320
+						width: 400
 					}
 				}}
 			>
@@ -78,7 +78,7 @@ const SettingsDrawer = () => {
 				<Box sx={{ mt: 3 }}>
 					<TextField
 						fullWidth
-						label="Theme"
+						label={t(`theme.theme`)}
 						name="theme"
 						onChange={event => handleChange('theme', event.target.value)}
 						select
@@ -92,33 +92,6 @@ const SettingsDrawer = () => {
 							</option>
 						))}
 					</TextField>
-				</Box>
-				<Box
-					sx={{
-						mt: 2,
-						px: 1.5
-					}}
-				>
-					<FormControlLabel
-						control={
-							<Switch
-								checked={values.compact}
-								color="primary"
-								edge="start"
-								name="compact"
-								onChange={event => handleChange('compact', event.target.checked)}
-							/>
-						}
-						label={
-							<div>
-								{t('theme.compact.label')}
-								Compact
-								<Typography color="textSecondary" component="p" variant="caption">
-									{t('theme.compact.means')}
-								</Typography>
-							</div>
-						}
-					/>
 				</Box>
 				<Box
 					sx={{
@@ -146,6 +119,33 @@ const SettingsDrawer = () => {
 						}
 					/>
 				</Box>
+				<Box
+					sx={{
+						mt: 2,
+						px: 1.5
+					}}
+				>
+					<FormControlLabel
+						control={
+							<Switch
+								checked={values.compact}
+								color="primary"
+								edge="start"
+								name="compact"
+								onChange={event => handleChange('compact', event.target.checked)}
+							/>
+						}
+						label={
+							<div>
+								{t('theme.compact.label')}
+								<Typography color="textSecondary" component="p" variant="caption">
+									{t('theme.compact.means')}
+								</Typography>
+							</div>
+						}
+					/>
+				</Box>
+
 				<Box
 					sx={{
 						mt: 2,

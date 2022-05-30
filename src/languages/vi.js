@@ -4,7 +4,11 @@ const vi = {
 	},
 
 	seo: {
-		appName: 'Mút xốp mầm non'
+		appName: 'Mút xốp mầm non',
+
+		auth: {
+			login: 'Đăng ký tài khoản - Mút xốp mầm non'
+		}
 	},
 
 	theme: {
@@ -28,6 +32,13 @@ const vi = {
 			light: 'Sáng',
 			nature: 'Thiên nhiên'
 		}
+	},
+
+	auth: {
+		login: 'Đăng nhập',
+		register: 'Đăng ký',
+		forgotPassword: 'Quên mật khẩu',
+		dontHaveAccount: 'Chưa có tài khoản'
 	},
 
 	// See more at https://github.com/jquense/yup/blob/master/src/locale.ts

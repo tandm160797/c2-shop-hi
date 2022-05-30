@@ -23,7 +23,7 @@ const LanguagePopover = () => {
 
 	return (
 		<>
-			<Tooltip title={t('text.changeLanguage')}>
+			<Tooltip title={t('common.changeLanguage')}>
 				<IconButton onClick={handleOpen} ref={anchorRef}>
 					<Flag country={language.flag} />
 				</IconButton>
