@@ -1,0 +1,23 @@
+{
+	"plugins": [
+		[
+			"module-resolver",
+			{
+				"root": ["."],
+				"alias": {
+					"$components": "./src/components",
+					"$constants": "./src/constants",
+					"$contexts": "./src/contexts",
+					"$hooks": "./src/hooks",
+					"$icons": "./src/icons",
+					"$languages": "./src/languages",
+					"$services": "./src/services",
+					"$store": "./src/store",
+					"$tests": "./src/tests",
+					"$theme": "./src/theme",
+					"$utils": "./src/utils"
+				}
+			}
+		]
+	]
+}
