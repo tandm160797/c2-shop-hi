@@ -1,0 +1,12 @@
+{
+	"User": {
+		"id": "string",
+		"role": "string",
+		"fullName": "string",
+		"gender": "string",
+		"birthday": "string",
+		"phone": "string - required",
+		"address": "string",
+		"password": "string"
+	}
+}

@@ -24,7 +24,6 @@ const PasswordField = ({ name, control, ...restProps }) => {
 			render={({ field, formState: { errors } }) => (
 				<TextField
 					fullWidth
-					id={name}
 					{...field}
 					size="small"
 					margin="normal"

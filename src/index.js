@@ -2,8 +2,10 @@ import { SettingsProvider } from '$contexts/SettingsContext'
 import '$languages'
 import store, { persistor } from '$store'
 import { StyledEngineProvider } from '@mui/material'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 import { SnackbarProvider } from 'notistack'
-import React from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import { Provider as StoreProvider } from 'react-redux'
@@ -19,7 +21,7 @@ const anchorOrigin = {
 const root = createRoot(document.querySelector('#root'))
 
 root.render(
-	<React.StrictMode>
+	<StrictMode>
 		<Router>
 			<HelmetProvider>
 				<StyledEngineProvider injectFirst>
@@ -27,7 +29,9 @@ root.render(
 						<StoreProvider store={store}>
 							<PersistGate persistor={persistor} loading={null}>
 								<SnackbarProvider anchorOrigin={anchorOrigin}>
-									<App />
+									<LocalizationProvider dateAdapter={AdapterMoment}>
+										<App />
+									</LocalizationProvider>
 								</SnackbarProvider>
 							</PersistGate>
 						</StoreProvider>
@@ -35,5 +39,5 @@ root.render(
 				</StyledEngineProvider>
 			</HelmetProvider>
 		</Router>
-	</React.StrictMode>
+	</StrictMode>
 )

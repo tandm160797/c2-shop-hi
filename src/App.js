@@ -4,12 +4,14 @@ import useSettings from '$hooks/useSettings'
 import { createCustomTheme } from '$theme'
 import { ThemeProvider } from '@mui/material'
 import CssBaseline from '@mui/material/CssBaseline'
-import React from 'react'
 import { useRoutes } from 'react-router-dom'
+import usePlacesAutocomplete from 'use-places-autocomplete'
 import routes from './routes'
 
 const App = () => {
 	useScrollReset()
+
+	usePlacesAutocomplete()
 
 	const routing = useRoutes(routes())
 

@@ -1,11 +1,11 @@
 import { experimentalStyled } from '@mui/material'
-import React from 'react'
 
 const LogoRoot = experimentalStyled('svg')``
 
-const Logo = props => (
-	<LogoRoot height="52" version="1.1" viewBox="0 0 52 52" width="52" {...props}>
+const Logo = () => (
+	<LogoRoot height="52" version="1.1" viewBox="0 0 52 52" width="52">
 		<title>MKP</title>
+
 		<defs>
 			<filter id="filter">
 				<feColorMatrix

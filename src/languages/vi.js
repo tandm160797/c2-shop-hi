@@ -7,7 +7,8 @@ const vi = {
 		appName: 'Mút xốp mầm non',
 
 		auth: {
-			login: 'Đăng ký tài khoản - Mút xốp mầm non'
+			login: 'Đăng nhập - Mút xốp mầm non',
+			register: 'Đăng ký tài khoản - Mút xốp mầm non'
 		}
 	},
 
@@ -37,8 +38,45 @@ const vi = {
 	auth: {
 		login: 'Đăng nhập',
 		register: 'Đăng ký',
+		registerAccount: 'Đăng ký tài khoản',
 		forgotPassword: 'Quên mật khẩu',
-		dontHaveAccount: 'Chưa có tài khoản'
+		dontHaveAccount: 'Chưa có tài khoản',
+
+		terms: 'Điều khoản',
+		policy: 'Chính sách',
+		termsAndPolicy: 'Bằng việc đăng ký, bạn đã động ý với Mút xốp về',
+
+		fullName: {
+			label: 'Họ tên',
+			placeholder: 'Họ và tên đầy đủ của bạn'
+		},
+		phone: {
+			label: 'Số điện thoại',
+			placeholder: 'Số điện thoại dùng để đăng nhập'
+		},
+		password: {
+			label: 'Mật khẩu',
+			placeholder: 'Mật khẩu'
+		},
+		passwordConfirm: {
+			label: 'Xác nhận mật khẩu',
+			placeholder: 'Xác nhận mật khẩu'
+		},
+		address: {
+			label: 'Địa chỉ',
+			placeholder: 'Địa chỉ nhận hàng của bạn',
+			loadingText: 'Đang tìm kiếm địa chỉ phù hợp',
+			placesFieldNoOptions: 'Không tìm thấy địa chỉ phù hợp, xin vui lòng kiểm tra lại!'
+		},
+		birthday: {
+			label: 'Ngày sinh'
+		},
+		gender: {
+			label: 'Giới tính',
+			male: 'Nam',
+			female: 'Nữ',
+			other: 'Khác'
+		}
 	},
 
 	// See more at https://github.com/jquense/yup/blob/master/src/locale.ts

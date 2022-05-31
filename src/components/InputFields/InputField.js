@@ -1,7 +1,6 @@
 import useLanguage from '$hooks/useLanguage'
 import { TextField } from '@mui/material'
 import PropTypes from 'prop-types'
-import React from 'react'
 import { Controller } from 'react-hook-form'
 
 const InputField = ({ name, control, ...restProps }) => {
@@ -14,7 +13,6 @@ const InputField = ({ name, control, ...restProps }) => {
 			render={({ field, formState: { errors } }) => (
 				<TextField
 					fullWidth
-					id={name}
 					{...field}
 					size="small"
 					margin="normal"

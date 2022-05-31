@@ -3,6 +3,7 @@ import { lazy } from 'react'
 import Loadable from './components/Loadable'
 
 const LoginPage = Loadable(lazy(() => import('./pages/Auth/Login')))
+const RegisterPage = Loadable(lazy(() => import('./pages/Auth/Register')))
 
 const adminRoutes = []
 
@@ -17,7 +18,7 @@ const publicRoutes = [
 			},
 			{
 				path: 'register',
-				element: '1'
+				element: <RegisterPage />
 			}
 		]
 	}

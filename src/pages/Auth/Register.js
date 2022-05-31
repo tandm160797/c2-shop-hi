@@ -1,115 +1,58 @@
-// import { Box, Card, CardContent, Container, Divider, Link, Typography } from '@material-ui/core'
-// import { useEffect } from 'react'
-// import { Helmet } from 'react-helmet-async'
-// import { Link as RouterLink } from 'react-router-dom'
-// import AuthBanner from '../../components/authentication/AuthBanner'
-// import { RegisterAmplify, RegisterAuth0, RegisterFirebase, RegisterJWT } from '../../components/authentication/register'
-// import Logo from '../../components/Logo'
-// import useAuth from '../../hooks/useAuth'
-// import gtm from '../../lib/gtm'
+import RegisterForm from '$components/Auth/RegisterForm'
+import useLanguage from '$hooks/useLanguage'
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
+import { Box, Typography } from '@mui/material'
+import Avatar from '@mui/material/Avatar'
+import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
+import { Helmet } from 'react-helmet-async'
 
-// const platformIcons = {
-// 	Amplify: '/static/icons/amplify.svg',
-// 	Auth0: '/static/icons/auth0.svg',
-// 	Firebase: '/static/icons/firebase.svg',
-// 	JWT: '/static/icons/jwt.svg'
-// }
+const Register = () => {
+	const { t } = useLanguage()
 
-// const Register = () => {
-// 	const { platform } = useAuth()
+	return (
+		<>
+			<Helmet>
+				<title>{t('seo.auth.register')}</title>
+			</Helmet>
 
-// 	useEffect(() => {
-// 		gtm.push({ event: 'page_view' })
-// 	}, [])
+			<Grid container component="main" sx={{ height: '100vh' }}>
+				<Grid
+					item
+					xs={false}
+					sm={4}
+					md={7}
+					sx={{
+						backgroundImage: 'url(https://source.unsplash.com/random)',
+						backgroundRepeat: 'no-repeat',
+						backgroundColor: t => (t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900]),
+						backgroundSize: 'cover',
+						backgroundPosition: 'center'
+					}}
+				/>
 
-// 	return (
-// 		<>
-// 			<Helmet>
-// 				<title>Register | Material Kit Pro</title>
-// 			</Helmet>
-// 			<Box
-// 				sx={{
-// 					backgroundColor: 'background.default',
-// 					display: 'flex',
-// 					flexDirection: 'column',
-// 					minHeight: '100vh'
-// 				}}
-// 			>
-// 				<AuthBanner />
-// 				<Container maxWidth="sm" sx={{ py: '80px' }}>
-// 					<Box
-// 						sx={{
-// 							mb: 8,
-// 							display: 'flex',
-// 							justifyContent: 'center'
-// 						}}
-// 					>
-// 						<RouterLink to="/">
-// 							<Logo
-// 								sx={{
-// 									height: 40,
-// 									width: 40
-// 								}}
-// 							/>
-// 						</RouterLink>
-// 					</Box>
-// 					<Card>
-// 						<CardContent
-// 							sx={{
-// 								display: 'flex',
-// 								flexDirection: 'column',
-// 								p: 4
-// 							}}
-// 						>
-// 							<Box
-// 								sx={{
-// 									alignItems: 'center',
-// 									display: 'flex',
-// 									justifyContent: 'space-between',
-// 									mb: 3
-// 								}}
-// 							>
-// 								<div>
-// 									<Typography color="textPrimary" gutterBottom variant="h4">
-// 										Register
-// 									</Typography>
-// 									<Typography color="textSecondary" variant="body2">
-// 										Register on the internal platform
-// 									</Typography>
-// 								</div>
-// 								<Box
-// 									sx={{
-// 										height: 32,
-// 										'& > img': {
-// 											maxHeight: '100%',
-// 											width: 'auto'
-// 										}
-// 									}}
-// 								>
-// 									<img alt="Auth platform" src={platformIcons[platform]} />
-// 								</Box>
-// 							</Box>
-// 							<Box
-// 								sx={{
-// 									flexGrow: 1,
-// 									mt: 3
-// 								}}
-// 							>
-// 								{platform === 'Amplify' && <RegisterAmplify />}
-// 								{platform === 'Auth0' && <RegisterAuth0 />}
-// 								{platform === 'Firebase' && <RegisterFirebase />}
-// 								{platform === 'JWT' && <RegisterJWT />}
-// 							</Box>
-// 							<Divider sx={{ my: 3 }} />
-// 							<Link color="textSecondary" component={RouterLink} to="/authentication/login" variant="body2">
-// 								Having an account
-// 							</Link>
-// 						</CardContent>
-// 					</Card>
-// 				</Container>
-// 			</Box>
-// 		</>
-// 	)
-// }
+				<Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+					<Box
+						sx={{
+							my: 8,
+							mx: 4,
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center'
+						}}
+					>
+						<Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+							<LockOutlinedIcon />
+						</Avatar>
+						<Typography component="h1" variant="h5">
+							{t('auth.registerAccount')}
+						</Typography>
+						<RegisterForm />
+					</Box>
+				</Grid>
+			</Grid>
+		</>
+	)
+}
 
-// export default Register
+export default Register

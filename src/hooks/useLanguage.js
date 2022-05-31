@@ -1,5 +1,7 @@
 import languageSelector from '$store/selectors/languageSelector'
 import { languageActions } from '$store/slices/languageSlice'
+import moment from 'moment'
+import 'moment/locale/vi'
 import { useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
@@ -50,6 +52,7 @@ const useLanguage = () => {
 
 	useEffect(() => {
 		setTimeout(() => {
+			moment.locale(language.locale)
 			i18n.changeLanguage(language.locale)
 		}, 100)
 	}, [language, i18n])
